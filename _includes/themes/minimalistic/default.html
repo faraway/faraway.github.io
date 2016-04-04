@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>R4S11 &raquo; {{ page.title }}</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+
+    <!-- Le styles -->
+    <link href="{{ ASSET_PATH }}/styles.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="{{ ASSET_PATH }}/pygment_trac.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <link rel="alternate" type="application/atom+xml" href="{{ BASE_PATH }}/atom.xml"/>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+    <a class="forkme" href="https://github.com/faraway/faraway.github.io" target="_blank">
+      <img style="position: absolute; top: 0; right: 0; border: 0;"
+          src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"
+          alt="Fork me on GitHub">
+    </a>
+
+    <div class="wrapper">
+      <header>
+        <a class="brand" href="{{ HOME_PATH }}">
+          <h1>
+          {{ site.title }}
+          </h1>
+        </a>
+
+        <p>Programmer, Snowboarder, Dota-er.</p>
+
+        <img src="http://icons.iconarchive.com/icons/limav/flat-gradient-social/24/Github-icon.png" height="16"/>
+        <a href="http://github.com/{{site.author.github}}">{{site.author.github}}</a>
+
+        <img src="http://icons.iconarchive.com/icons/limav/flat-gradient-social/24/Stackoverflow-icon.png" height="16"/>
+        <a href="{{site.author.stackoverflow.url}}">{{site.author.stackoverflow.name}}</a>
+
+        <img src="http://icons.iconarchive.com/icons/graphics-vibe/simple-rounded-social/24/linkedin-icon.png" height="16"/>
+        <a href="{{site.author.linkedin.url}}">{{site.author.linkedin.name}}</a><br>
+        <p></p>
+
+        <ul class="pages">
+          {% assign pages_list = site.pages %}
+          {% assign group = 'navigation' %}
+          {% include JB/pages_list %}
+          <li>&gt;&nbsp;<a href="/resume.html">Resume</a></li>
+        </ul>
+
+      </header>
+      <section>
+      <div class="content">
+        <article>
+          {{ content }}
+        </article>
+      </div>
+      </section>
+      <footer>
+        <p>&copy; {{ site.author.name }} 2016
+        </p>
+        <p><small>
+          Directly forked from <a href="https://github.com/rahulsom/rahulsom.github.com">Rahul's github page</a>.<br>
+          Based on <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a> and theme <a href="https://github.com/orderedlist/minimal">Minimal</a>.<br>
+          Hosted on <a href="http://pages.github.com">GitHub Pages</a>.<br>
+        </small></p>
+      </footer>
+
+    </div>
+
+    {% include JB/analytics %}
+  </body>
+</html>
